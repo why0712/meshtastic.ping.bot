@@ -1,0 +1,62 @@
+=====================================================
+MeshBot v1.2.0
+Released: 2026-07-07
+Author: 9A3WHY (cromesh.eu)
+=====================================================
+
+Changes since v1.1.x
+
+Added
+-----
++ Initial v1.2.x codebase preparation.
++ Default serial port configuration (/dev/ttyACM0).
++ Connection retry scaffold.
++ Improved startup messaging.
++ Cleaner project versioning.
+
+Changed
+-------
+* Updated version numbering to v1.2.0.
+* Cleaned source comments.
+* Prepared codebase for future modular architecture.
+
+Fixed
+-----
+* Improved handling of startup exceptions.
+* Better shutdown cleanup structure.
+* More robust interface initialization scaffold.
+
+Known Issues
+------------
+- Meshtastic Python library still opens the serial port with
+  exclusive=True.
+- If another application is already using /dev/ttyACM0,
+  the bot cannot connect.
+- This is an operating system / pySerial limitation, not a MeshBot bug.
+
+Planned for future releases
+---------------------------
+- Automatic USB radio detection.
+- TCPInterface fallback.
+- Automatic reconnect after radio disconnect.
+- External configuration file.
+- Plugin-based command architecture.
+- Improved logging.
+- Better node information display.
+- Additional admin commands.
+- Statistics module.
+- Weather module.
+- APRS gateway support.
+- Remote administration.
+- Scheduled beacon support.
+- OTA-ready architecture.
+- Multi-radio support.
+- Web dashboard.
+
+Compatibility
+-------------
+Python 3.10+
+Meshtastic Python API
+Linux (Raspberry Pi, Debian, Ubuntu)
+
+=====================================================
