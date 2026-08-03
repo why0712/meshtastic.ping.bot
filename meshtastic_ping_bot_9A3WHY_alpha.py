@@ -4,7 +4,7 @@
 #
 # Connects to a Meshtastic radio over a serial (USB) link with automatic
 # reconnect/backoff, and answers simple text commands sent to it over the
-# mesh (!ping, !time, !uptime, !nodes, !info, !wargames), plus a small
+# mesh (ping/time/uptime/nodes/info/wargames; !-prefixed forms also accepted), plus a small
 # turn-based "wargames" text game.
 # =====================================================
 
@@ -389,7 +389,7 @@ class MeshBot:
 
         self.log("CMD", f"{sender}: {command}")
 
-        if command == "cmd":
+        if command in ("cmd", "help", "?"):
             reply = (
                 "ping\n"
                 "time\n"
@@ -421,9 +421,9 @@ class MeshBot:
             )
 
         elif command == "info":
-            reply = "MeshBot\nType !cmd for the list of commands."
+            reply = "MeshBot\nType cmd (or help) for the list of commands."
 
-        elif command == "wargames":
+        elif command in ("wargames", "game"):
             reply = self.start_game(sender)
 
         else:

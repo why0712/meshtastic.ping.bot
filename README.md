@@ -66,15 +66,17 @@ python3 pingbot.py
 
 | Command | Function |
 |---------|----------|
-| `!help` / `!cmd` | Help |
-| `!info` | Bot information |
-| `!ping` | RSSI / SNR |
-| `!time` | Current time |
-| `!uptime` | System uptime |
-| `!nodes` | Known nodes |
-| `!game` | Wargames simulation |
+| `help`, `cmd`, `?` | Help |
+| `info` | Bot information |
+| `ping` | RSSI / SNR |
+| `time` | Current time |
+| `uptime` | System uptime |
+| `nodes` | Known nodes |
+| `game` / `wargames` | Wargames simulation |
 
 ---
+
+> **Compatibility:** Commands may be entered with or without a leading `!`. For example, `ping` and `!ping` both work.
 
 ## Logging
 
@@ -124,7 +126,7 @@ Direct-message replies may fail with `NO_CHANNEL` when a remote node has a stale
 
 ### v1.1.0
 - Initial public release
-- !ping, !time, !uptime, !nodes, !info, !cmd
+- ping, time, uptime, nodes, info, cmd (legacy !-prefixed forms are also accepted)
 - Wargames simulation
 - Hidden admin easter egg
 
