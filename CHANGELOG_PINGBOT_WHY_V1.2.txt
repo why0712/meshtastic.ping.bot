@@ -1,0 +1,22 @@
+#
+# CHANGELOG (v1.1.2 -> v1.2.1)
+#
+# - Merged the v1.2.0 "connect with retry" scaffold into the full v1.1.2
+#   bot logic, and extended it into real auto-reconnect (not just a
+#   connect-at-startup loop):
+#     * Tries /dev/serial/by-id/* symlinks first (stable across USB
+#       replugs/reboots), then falls back to common ttyACM/ttyUSB names.
+#     * Subscribes to meshtastic's "connection.lost" pubsub topic and
+#       automatically reconnects (with exponential backoff) if the radio
+#       disconnects while the bot is running.
+#     * send_reply() now detects a broken serial link and triggers a
+#       reconnect instead of just logging the error and going silent.
+# - Fixed a string-concatenation bug in the !ping reply where
+#   "...in pvt" and "... for more ..." were glued together with no
+#   space/newline between them.
+# - SERIAL_PORT is now a list of candidates instead of one hardcoded path.
+# - Minor robustness fixes (guarding getMyUser()/nodes access, closing the
+#   interface cleanly on shutdown and on reconnect).
+# =====================================================
+
+# NOTE: V1 made with ChatGPT, V2 adapted and debugged by CLAUDE AI 
